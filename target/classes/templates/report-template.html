@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шаблон отчета</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .input-field {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #000;
+            padding: 4px;
+            margin: 2px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Шаблон отчета</h1>
+        <table id="reportTable">
+            <thead>
+                <tr>
+                    <th>Параметр</th>
+                    <th>Описание</th>
+                    <th>Значение</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Номер</td>
+                    <td>1</td>
+                    <td><input type="text" class="input-field" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>Название</td>
+                    <td>2</td>
+                    <td><input type="text" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Дата</td>
+                    <td>3</td>
+                    <td><input type="date" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Текст</td>
+                    <td>4</td>
+                    <td><textarea class="input-field" rows="3"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Текст 2</td>
+                    <td>5</td>
+                    <td><textarea class="input-field" rows="3"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Форма для скачивания отчета -->
+        <form action="/generateWordReport" method="get">
+            <button type="submit">Скачать отчет в формате .docx</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
